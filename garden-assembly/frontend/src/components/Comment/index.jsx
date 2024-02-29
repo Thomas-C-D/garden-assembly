@@ -38,7 +38,7 @@ export default function Comment({ data, refreshComments }) {
                 name="content"
                 placeholder="Add comment"
                 value={editFormData.content}
-                onChage={handleInputChange}
+                onChange={handleInputChange}
             ></textarea>
             <button
                 onClick={() => { setShowEditForm(false) }}

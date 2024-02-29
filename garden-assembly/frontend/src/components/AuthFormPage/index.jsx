@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { signUp, logIn } from '../../../utils/backend'
 
 
-export default function AuthFormPage() {
+export default function AuthFormPage({ setLoginStatus }) {
 
     const [formData, setFormData] = useState({
         name: "",
@@ -20,6 +20,9 @@ export default function AuthFormPage() {
     formType === 'login' ? actionText = 'Log in' : actionText = 'Sign up'
 
 
+    let hasName
+    formType === 'signup' ? hasName = true : hasName = false
+
     const navigate = useNavigate()
 
     async function handleSubmit(event) {
@@ -27,9 +30,11 @@ export default function AuthFormPage() {
         if (formType === 'login') {
             const { token } = await logIn(formData)
             localStorage.setItem('userToken', token)
+            setLoginStatus(true)
         } else {
             const { token } = await signUp(formData)
             localStorage.setItem('userToken', token)
+            setLoginStatus(true)
         }
         navigate('/')
     }
@@ -38,6 +43,7 @@ export default function AuthFormPage() {
             <div>
                 <h2>{actionText}</h2>
                 <form  onSubmit={handleSubmit}>
+                   { hasName && 
                     <div>
                         <label htmlFor="name">Name</label>
                         <input 
@@ -50,6 +56,8 @@ export default function AuthFormPage() {
                             onChange={handleInputChange}
                         />
                         </div>
+                   
+                        }
                         <div>
                         <label htmlFor="email">Email</label>
                         <input 

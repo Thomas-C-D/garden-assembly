@@ -1,6 +1,8 @@
 require('dotenv').config()
 const mongoose = require('mongoose');
 
+
+mongoose.connect(process.env.MONGODBURI)
 const db = mongoose.connection
 
 db.on('connected', function () {
@@ -10,4 +12,5 @@ db.on('connected', function () {
 module.exports = {
     Comment: require('./comment'),
     User: require('./user'),
+    Flower: require('./flower')
 }

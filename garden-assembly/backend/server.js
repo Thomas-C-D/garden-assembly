@@ -9,6 +9,7 @@ const db = require('./models');
 
 const commentsCtrl = require('./controllers/comments')
 const usersCtrl = require('./controllers/users')
+const flowersCtrl = require('./controllers/flowers')
 
 // Express app
 
@@ -24,6 +25,7 @@ app.use(express.json())
 
 app.use('/api/comments', commentsCtrl)
 app.use('/api/users', usersCtrl)
+app.use('/api/flowers', flowersCtrl)
 
 // Listening
 

@@ -28,29 +28,37 @@ const authMiddleware = (req, res, next) => {
 
 // Routes:
 
+// Get
+router.get('/', (req, res) => {
+    db.Flower.find({})
+    .then(flower => res.json(flower))
+})
+
 
 // Create
 
 router.post('/', authMiddleware, (req, res) => {
-    req.body.name = req.user.name
-    db.Comment.create({
+    
+    req.body.dateMade = new Date()
+    db.Flower.create({
         ...req.body,
-        userId: req.user.id
+        userId: req.user.id,
+        name: req.user.name
     })
-        .then(comment => res.json(comment))
+        .then(flower => res.json(flower))
 })
 
 // Update
 
 router.put('/:id', authMiddleware, async (req, res) => {
-    const userComment = await db.Comment.findById(req.params.id)
-    if (userComment.userId == req.user.id) {
-        const newComment = await db.Comment.findByIdAndUpdate(
+    const userFlower = await db.Flower.findById(req.params.id)
+    if (userFlower.userId == req.user.id) {
+        const newFlower = await db.Flower.findByIdAndUpdate(
             req.params.id,
             req.body,
             { new: true }
         )
-        res.json(newComment)
+        res.json(newFlower)
     } else {
         res.status(401).json({ message: 'Invalid user or token'});
     }
@@ -60,10 +68,10 @@ router.put('/:id', authMiddleware, async (req, res) => {
 // Destroy
 
 router.delete(':/id', authMiddleware, async (req, res) => {
-    const userComment = await db.Comment.findById(req.params.id)
-    if (userComment.userId == req.user.id) {
-        const deletedComment = await db.Comment.findByIdAndDelete(req.params.id)
-        res.send('You deleted comment ' + deletedComment._id)
+    const userFlower = await db.Flower.findById(req.params.id)
+    if (userFlower.userId == req.user.id) {
+        const deletedFlower = await db.Flower.findByIdAndDelete(req.params.id)
+        res.send('You deleted comment ' + deletedFlower._id)
     } else {
         res.status(401).json({ message: 'Invalid user or token '});
     }

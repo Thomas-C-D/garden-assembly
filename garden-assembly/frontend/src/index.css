@@ -2,6 +2,13 @@
   background-color: #040519FF;
   color: white;
 }
+a {
+  color: lime;
+  text-decoration: none;
 
+}
+a:hover{
+  color: yellow;
+}
 
 

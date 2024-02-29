@@ -6,7 +6,6 @@ export default function commentSection({ flowerId }) {
      const [comment, setComments]  = useState([])
      const [showCreateForm, setShowCreateForm] = useState(false)
      const [createFormData, setCreateFormData] = useState({
-        name: '',
         content: ''
      })
 
@@ -34,7 +33,6 @@ export default function commentSection({ flowerId }) {
      function handleSubmit(event) {
         event.preventDefault()
         setCreateFormData({
-            name: '',
             content: ''
         })
         setShowCreateForm(false)
@@ -71,6 +69,7 @@ export default function commentSection({ flowerId }) {
                     onSubmit={handleSubmit}
                 >
                 <textarea name="content" 
+                placeholder="Add a comment"
                     value={createFormData.content}
                     onChange={handleInputChange}
                 ></textarea>

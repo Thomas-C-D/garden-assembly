@@ -13,7 +13,7 @@ const config = require('../../jwt.config.js')
 router.post('/signup', (req, res) => {
     db.User.create(req.body)
         .then(user => {
-            const token = jwt.encode({ id: user.id }, config.jwtSecret)
+            const token = jwt.encode({ id: user.id, name: user.name }, config.jwtSecret)
             res.json({ token: token })
         })
         .catch(() => {
@@ -27,11 +27,12 @@ router.post('/login', async (req, res) => {
     const foundUser = await db.User.findOne({ email: req.body.email })
 
     if (foundUser && foundUser.password === req.body.password) {
-        const payload = { id: foundUser.id }
+        const payload = { id: foundUser.id, name: foundUser.name }
         const token = jwt.encode(payload, config.jwtSecret)
         res.json({
             token: token,
-            email: foundUser.email
+            email: foundUser.email,
+            
         })
     } else {
         res.status(401)

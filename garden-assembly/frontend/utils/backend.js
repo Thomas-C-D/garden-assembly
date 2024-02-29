@@ -1,5 +1,32 @@
 import axios from 'axios'
 
+// Flowers functions
+
+export async function getFlowers() {
+    const { data } = await axios.get('/api/flowers')
+    console.log(data)
+    return data
+}
+
+export async function postFlower(flower) {
+    const authHeader = { headers: { 'Authorization': localStorage.getItem('userToken') } }
+    const { data } = await axios.post('/api/flowers', flower, authHeader)
+    return data
+}
+
+export async function updateFlower(flower, id) {
+    const authHeader = { headers: { 'Authorization': localStorage.getItam('userToken') } }
+    const { data } = await axios.put(`/api/flowers${id}`, flower, authHeader )
+    return data
+}
+
+export async function deleteFlower(id) {
+    const authHeader = { headers: { 'Authorization': localStorage.getItam('userToken') } }
+    const { data } = await axios.delete(`/api/flowers${id}`, authHeader )
+    return data
+}
+
+
 // Users functions
 
 export async function signUp(user) {
@@ -8,7 +35,7 @@ export async function signUp(user) {
 }
 
 export async function logIn(user) {
-    const { data } = await axios.post('/api/user/login', user)
+    const { data } = await axios.post('/api/users/login', user)
     return data
 }
 

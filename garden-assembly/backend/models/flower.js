@@ -4,7 +4,7 @@ const flowerSchema = new mongoose.Schema(
     {
     name: {
         type: String,
-        required: true,
+       
     },
     content: {
         type: String,
@@ -12,13 +12,14 @@ const flowerSchema = new mongoose.Schema(
     },
     dateMade : {
         type: Date,
-        required: true
+        
     },
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'User',
     },
+
 },
 
  {timestamps: true}
