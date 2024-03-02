@@ -11,7 +11,7 @@ const flowerSchema = new mongoose.Schema(
         required: true,
     },
     dateMade : {
-        type: Date,
+        type: String,
         
     },
     userId: {

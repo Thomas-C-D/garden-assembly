@@ -7,7 +7,6 @@ export default function Comment({ data, refreshComments }) {
         content: data.content
     })
 
-    console.log(data)
 
     function handleInputChange(event) {
         setEditFormData({

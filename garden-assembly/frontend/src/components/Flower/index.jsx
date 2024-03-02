@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { updateFlower, deleteFlower, getOneFlower } from '../../../utils/backend'
-
+import FlowerSprite from '../FlowerSprite'
 
 export default function Flower({ flowerId }) {
     const [flower, setFlower] = useState({})
@@ -15,7 +15,6 @@ export default function Flower({ flowerId }) {
     useEffect(() => {
         getOneFlower(flowerId)
         .then(flower =>  {
-            console.log(flower)
             setFlower(flower)})
         
     }, [])
@@ -74,7 +73,7 @@ export default function Flower({ flowerId }) {
     } else {
         return (
             <div>
-               
+               <FlowerSprite flower={flower}/>
                <p>{flower.name}</p>
                <p>{flower.content}</p>
                
