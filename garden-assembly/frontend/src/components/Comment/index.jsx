@@ -4,9 +4,10 @@ import { updateComment, deleteComment } from '../../../utils/backend'
 export default function Comment({ data, refreshComments }) {
     const [showEditForm, setShowEditForm] = useState(false)
     const [editFormData, setEditFormData] = useState({
-        name: data.name,
         content: data.content
     })
+
+    console.log(data)
 
     function handleInputChange(event) {
         setEditFormData({

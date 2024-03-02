@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react'
 import { getFlowers } from '../../../utils/backend'
-import { Link } from "react-router-dom";
 import Card from '../Card'
 
 
-export default function IndexPage() {
+export default function IndexPage({ makeFlowerId }) {
     const [flowers, setFlowers] = useState([])
         useEffect(() => {
             getFlowers()
@@ -12,7 +11,7 @@ export default function IndexPage() {
         }, [])
     return (
         <>
-        {flowers.length > 0 ? flowers.map(flower => <Card key={flower.id} flower={flower}   /> ) : <p>No flowers yet. We'll be growing some soon.</p>}
+        {flowers.length > 0 ? flowers.map(flower => <Card key={flower._id} flower={flower} makeFlowerId={makeFlowerId}  /> ) : <p>No flowers yet. We'll be growing some soon.</p>}
         </>
     )
 }

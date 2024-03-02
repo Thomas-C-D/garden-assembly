@@ -7,9 +7,11 @@ import HomePage from '../HomePage/index.jsx'
 import IndexPage from '../IndexPage/index.jsx'
 import AuthFormPage from '../AuthFormPage/index.jsx'
 import NewFlowerPage from '../NewFlowerPage/index.jsx'
+import DetailsPage from '../DetailsPage/index.jsx'
 
 function App() {
   const [loginStatus, setLoginStatus] = useState(false)
+  const [flowerId, setFlowerId] = useState()
   
   useEffect(() => {
     if (localStorage.getItem('userToken')) { setLoginStatus(true) }
@@ -53,8 +55,13 @@ if (loginStatus) {
       } />
     <Route  path="/index"
     element={
-      <IndexPage />
+      <IndexPage  makeFlowerId={setFlowerId}/>
     } />
+    <Route path="/details"
+      element={
+        <DetailsPage myFlowerId={flowerId}/>
+      }
+    />
     <Route  path="/auth/:formType" 
     element={
     <AuthFormPage  setLoginStatus={setLoginStatus} />

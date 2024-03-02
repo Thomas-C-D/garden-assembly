@@ -4,7 +4,11 @@ import axios from 'axios'
 
 export async function getFlowers() {
     const { data } = await axios.get('/api/flowers')
-    console.log(data)
+    return data
+}
+
+export async function getOneFlower(flowerId) {
+    const { data } = await axios.get(`/api/flowers/${flowerId}`)
     return data
 }
 
@@ -15,14 +19,14 @@ export async function postFlower(flower) {
 }
 
 export async function updateFlower(flower, id) {
-    const authHeader = { headers: { 'Authorization': localStorage.getItam('userToken') } }
-    const { data } = await axios.put(`/api/flowers${id}`, flower, authHeader )
+    const authHeader = { headers: { 'Authorization': localStorage.getItem('userToken') } }
+    const { data } = await axios.put(`/api/flowers/${id}`, flower, authHeader )
     return data
 }
 
 export async function deleteFlower(id) {
-    const authHeader = { headers: { 'Authorization': localStorage.getItam('userToken') } }
-    const { data } = await axios.delete(`/api/flowers${id}`, authHeader )
+    const authHeader = { headers: { 'Authorization': localStorage.getItem('userToken') } }
+    const { data } = await axios.delete(`/api/flowers/${id}`, authHeader )
     return data
 }
 
@@ -46,6 +50,7 @@ export async function getComments(flowerId) {
     return data
 }
 
+
 export async function postComment(comment) {
     const authHeader = { headers: { 'Authorization': localStorage.getItem('userToken') } }
     const { data } = await axios.post('/api/comments', comment, authHeader)
@@ -61,5 +66,10 @@ export async function updateComment(comment, id) {
 export async function deleteComment(id) {
     const authHeader = { headers: { 'Authorization': localStorage.getItem('userToken') } }
     const { data } = await axios.delete(`/api/comments/${id}`, authHeader)
+    return data
+}
+
+export async function deleteAllComments(flowerId) {
+    const { data } = await axios.delete(`/api/comments/all/${flowerId}`)
     return data
 }

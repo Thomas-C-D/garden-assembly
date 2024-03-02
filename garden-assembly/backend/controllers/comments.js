@@ -28,6 +28,13 @@ const authMiddleware = (req, res, next) => {
 
 // Routes:
 
+// Index
+
+router.get('/:flowerId', function (req, res) {
+    db.Comment.find({ flowerId: req.params.flowerId })
+    .then(comments => res.json(comments))
+})
+
 
 // Create
 
@@ -59,7 +66,7 @@ router.put('/:id', authMiddleware, async (req, res) => {
 
 // Destroy
 
-router.delete(':/id', authMiddleware, async (req, res) => {
+router.delete('/:id', authMiddleware, async (req, res) => {
     const userComment = await db.Comment.findById(req.params.id)
     if (userComment.userId == req.user.id) {
         const deletedComment = await db.Comment.findByIdAndDelete(req.params.id)
@@ -68,5 +75,6 @@ router.delete(':/id', authMiddleware, async (req, res) => {
         res.status(401).json({ message: 'Invalid user or token '});
     }
 })
+
 
 module.exports = router

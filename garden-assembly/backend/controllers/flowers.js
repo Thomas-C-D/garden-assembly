@@ -28,12 +28,19 @@ const authMiddleware = (req, res, next) => {
 
 // Routes:
 
-// Get
+// Index
 router.get('/', (req, res) => {
     db.Flower.find({})
     .then(flower => res.json(flower))
 })
 
+
+// Get one
+
+router.get('/:id', function ( req, res ) {
+    db.Flower.findById(req.params.id)
+        .then(flower => res.json(flower))
+})
 
 // Create
 
@@ -67,9 +74,11 @@ router.put('/:id', authMiddleware, async (req, res) => {
 
 // Destroy
 
-router.delete(':/id', authMiddleware, async (req, res) => {
+router.delete('/:id', authMiddleware, async (req, res) => {
+
     const userFlower = await db.Flower.findById(req.params.id)
     if (userFlower.userId == req.user.id) {
+        await db.Comment.deleteMany({ flowerId: req.params.id })
         const deletedFlower = await db.Flower.findByIdAndDelete(req.params.id)
         res.send('You deleted comment ' + deletedFlower._id)
     } else {

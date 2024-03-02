@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import { postComment, getComments } from '../../../utils/backend'
 import Comment from "../Comment"
 
-export default function commentSection({ flowerId }) {
-     const [comment, setComments]  = useState([])
+export default function CommentSection({ flowerId }) {
+     const [comments, setComments]  = useState([])
      const [showCreateForm, setShowCreateForm] = useState(false)
      const [createFormData, setCreateFormData] = useState({
         content: ''
@@ -80,6 +80,7 @@ export default function commentSection({ flowerId }) {
                 </button>
                 </form>
             }
+            {commentElements}
         </div>
      )
 }
