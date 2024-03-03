@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, Link, useLinkClickHandler } from 'react-router-dom'
 
 import './styles.css'
 import './app.js'
@@ -9,6 +9,9 @@ import AuthFormPage from '../AuthFormPage/index.jsx'
 import NewFlowerPage from '../NewFlowerPage/index.jsx'
 import DetailsPage from '../DetailsPage/index.jsx'
 
+
+
+
 function App() {
   const [loginStatus, setLoginStatus] = useState(false)
   const [flowerId, setFlowerId] = useState()
@@ -16,6 +19,7 @@ function App() {
   useEffect(() => {
     if (localStorage.getItem('userToken')) { setLoginStatus(true) }
   }, [])
+
 
  let authLink = <>
  <li><Link to="/auth/signup">Sign up</Link></li>
@@ -28,7 +32,7 @@ if (loginStatus) {
       localStorage.clear()
       setLoginStatus(false)
     }}
-  >
+>
     Log out
   </button>
 }
@@ -37,15 +41,16 @@ if (loginStatus) {
 
   return (
     <>
+    
     <nav>
     <div><Link to="/">Garden-Assembly</Link></div>
-    <div>
-      <ul>
+    
+      <ul id="link-list">
         <li><Link to="/newflower">Plant a flower</Link></li>
         {authLink}
         <li><Link to="/index">Index</Link></li>
       </ul>
-    </div>
+    
     </nav>
 
     <Routes>

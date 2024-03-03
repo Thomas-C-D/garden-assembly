@@ -1,7 +1,108 @@
-:root {
-  background-color: #040519FF;
-  color: white;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  display: flex;
+ height: 100vh;
+
+}
+
+#root {
+  flex-grow: 1;
+  background-color: black;
+  color: white;
+width: 100%;
+height: 100%;
+
+  display: flex;
+ justify-content: center;
+ align-items: center;
+ 
+
+}
+
+#app-root {
+  /* background-color: #040519FF; */
+  background-color: #051A2DFF;
+  width: 40%;
+  height: 0%;
+  animation: apppan 1.5s linear 2.5s forwards;
+  overflow: hidden;
+}
+
+@keyframes apppan {
+  0% {
+    width: 80%;
+    height: 0%;
+  }
+
+
+  70%  {
+    width: 80%;
+    height: 0%;
+  }
+  80% {
+    width: 80%;
+    height: 70%;
+  }
+  100% {
+    width: 80%;
+    height: 80%;  
+  }
+
+}
+
+#intro-root {
+  display: flex;
+  background-color: #21262BFF;
+  width: 0%;
+  height: 0%;
+  animation: intropan 2s linear 1s forwards;
+  overflow: hidden;
+  z-index: 2;
+  position: absolute;
+  
+  background-size: cover;
+}
+
+
+@keyframes intropan {
+  0% {
+    width: 25%;
+    height: 0%;
+  }
+  5% {
+    width: 25%;
+    height: 15%;
+  }
+  10% {
+    width: 25%;
+    height: 25%;
+  }
+
+  30% {
+    background-image: url("./assets/images/IntroCard1.gif");
+  }
+
+  90% {
+    width: 25%;
+    height: 25%;
+    background-image: url("./assets/images/IntroCard1.gif");
+  }
+  100% {
+    width: 25%;
+    height: 0%
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+
 a {
   color: lime;
   text-decoration: none;
@@ -11,4 +112,17 @@ a:hover{
   color: yellow;
 }
 
+nav {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
 
+#link-list {
+  justify-self: right;
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
