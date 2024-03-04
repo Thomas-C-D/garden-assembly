@@ -14,7 +14,11 @@ router.post('/signup', (req, res) => {
     db.User.create(req.body)
         .then(user => {
             const token = jwt.encode({ id: user.id, name: user.name }, config.jwtSecret)
-            res.json({ token: token })
+            const userId = user.id
+            res.json({ 
+                token: token,
+                userId: userId
+            })
         })
         .catch(() => {
             res.status(401)
@@ -29,10 +33,11 @@ router.post('/login', async (req, res) => {
     if (foundUser && foundUser.password === req.body.password) {
         const payload = { id: foundUser.id, name: foundUser.name }
         const token = jwt.encode(payload, config.jwtSecret)
+        const userId = foundUser.id
         res.json({
             token: token,
             email: foundUser.email,
-            
+            userId: userId
         })
     } else {
         res.status(401)

@@ -28,12 +28,14 @@ export default function AuthFormPage({ setLoginStatus }) {
     async function handleSubmit(event) {
         event.preventDefault()
         if (formType === 'login') {
-            const { token } = await logIn(formData)
+            const { token, userId } = await logIn(formData)
             localStorage.setItem('userToken', token)
+            localStorage.setItem('userId', userId)
             setLoginStatus(true)
         } else {
-            const { token } = await signUp(formData)
+            const { token, userId } = await signUp(formData)
             localStorage.setItem('userToken', token)
+            localStorage.setItem('userId', userId)
             setLoginStatus(true)
         }
         navigate('/')

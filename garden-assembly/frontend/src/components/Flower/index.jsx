@@ -44,6 +44,25 @@ export default function Flower({ flowerId }) {
         navigate('/')
     }
 
+    let buttons = <><div></div></>
+    if (localStorage.userId == flower.userId) {
+        buttons = <>
+                        <div>
+                    <button
+                        onClick={() => { setShowEditForm(true)}}
+                    >
+                        Edit
+                    </button>
+                    <button
+                        onClick={handleDelete}
+                    >
+                        Delete
+                    </button>
+                </div>
+
+        </>
+    }
+
     if (showEditForm) {
         return (
             <>
@@ -76,19 +95,7 @@ export default function Flower({ flowerId }) {
                <FlowerSprite flower={flower}/>
                <p>{flower.name}</p>
                <p>{flower.content}</p>
-               
-                <div>
-                    <button
-                        onClick={() => { setShowEditForm(true)}}
-                    >
-                        Edit
-                    </button>
-                    <button
-                        onClick={handleDelete}
-                    >
-                        Delete
-                    </button>
-                </div>
+            {buttons}
             </div>
         )
     }

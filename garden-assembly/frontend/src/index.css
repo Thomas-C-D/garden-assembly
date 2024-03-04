@@ -29,7 +29,7 @@ height: 100%;
   background-color: #051A2DFF;
   width: 40%;
   height: 0%;
-  animation: apppan 1.5s linear 2.5s forwards;
+  /* animation: apppan 1.5s linear 2.5s forwards; */
   overflow: hidden;
 }
 
@@ -46,7 +46,7 @@ height: 100%;
   }
   80% {
     width: 80%;
-    height: 70%;
+    height: 80%;
   }
   100% {
     width: 80%;
@@ -57,46 +57,64 @@ height: 100%;
 
 #intro-root {
   display: flex;
-  background-color: #21262BFF;
+  justify-content: center;
+  background-color: #474747FF;
   width: 0%;
   height: 0%;
   animation: intropan 2s linear 1s forwards;
   overflow: hidden;
   z-index: 2;
   position: absolute;
-  
+  background-image: none;
   background-size: cover;
 }
 
 
 @keyframes intropan {
   0% {
-    width: 25%;
+    width: 342px;
     height: 0%;
   }
   5% {
-    width: 25%;
+    width: 342px;
     height: 15%;
   }
   10% {
-    width: 25%;
-    height: 25%;
+    width: 342px;
+    height: 187.75px;
   }
+   
+  
 
-  30% {
-    background-image: url("./assets/images/IntroCard1.gif");
-  }
-
-  90% {
-    width: 25%;
-    height: 25%;
-    background-image: url("./assets/images/IntroCard1.gif");
-  }
   100% {
-    width: 25%;
-    height: 0%
+    width: 342px;
+    height: 187.75px;
+    
   }
+  
+  
+  
+  
+  
 }
+
+#intro-button  {
+  width: 50px;
+  height: 45px;
+  border: 1px solid transparent;
+  border-radius: 70px;
+  background-image: url('./assets/images/IntroButton.gif');
+  background-size: cover;
+  position: absolute;
+  bottom: 15px;
+  display: none;
+  cursor: pointer;
+  box-shadow: 5px 3px rgb(112, 112, 112);
+ 
+}
+
+
+
 
 ul {
   list-style-type: none;
