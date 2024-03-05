@@ -23,9 +23,6 @@ app.use(express.json())
 
 app.use(express.static(path.join(path.dirname(__dirname), 'frontend', 'dist')))
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(path.dirname(__dirname), 'frontend', 'dist', 'index.html'));
-});
 
 
 // Mount routes
@@ -34,6 +31,9 @@ app.use('/api/comments', commentsCtrl)
 app.use('/api/users', usersCtrl)
 app.use('/api/flowers', flowersCtrl)
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(path.dirname(__dirname), 'frontend', 'dist', 'index.html'));
+});
 // Listening
 
 app.listen(process.env.PORT, function () {

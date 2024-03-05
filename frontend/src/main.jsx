@@ -5,8 +5,9 @@ import { BrowserRouter as Router } from "react-router-dom"
 import App from './components/App'
 import './index.css'
 
-
-import IntroButton from './assets/images/IntroButton.gif'
+import IntroCard1 from './assets/images/IntroCard1.gif'
+import IntroCard2 from './assets/images/IntroCard2.gif'
+import IntroCard3 from './assets/images/IntroCard3.gif'
 import ButtonClick from './assets/audio/buttonclick.mp3'
 let slide = 1
 const click = new Audio(ButtonClick)
@@ -15,7 +16,7 @@ const click = new Audio(ButtonClick)
 
 
 setTimeout(() => {
-  document.getElementById('intro-root').style.backgroundImage = "url('../src/assets/images/IntroCard1.gif')"
+  document.getElementById('intro-root').style.backgroundImage = `url('${IntroCard1}')`
   document.getElementById('intro-button').style.display = 'block'
 }, 1300)
 
@@ -23,11 +24,11 @@ function introSlide() {
   click.play()
   if (slide == 1) {
     console.log("should work");
-    document.getElementById('intro-root').style.backgroundImage = "url('../src/assets/images/IntroCard2.gif')"
+    document.getElementById('intro-root').style.backgroundImage = `url('${IntroCard2}')`
   }
   if (slide == 2) {
     console.log("should work again");
-    document.getElementById('intro-root').style.backgroundImage = "url('../src/assets/images/IntroCard3.gif')"
+    document.getElementById('intro-root').style.backgroundImage = `url('${IntroCard3}')`
   }
   if (slide == 3) {
     document.getElementById('intro-button').style.display = 'none'

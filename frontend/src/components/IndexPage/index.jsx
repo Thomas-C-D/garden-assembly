@@ -13,7 +13,7 @@ export default function IndexPage({ makeFlowerId }) {
         <>
         <div id="flower-list">
             <div>
-        {flowers.length > 0 ? flowers.map(flower => <div><Card key={flower._id} flower={flower} makeFlowerId={makeFlowerId}  /></div> ) : <p>No flowers yet. We'll be growing some soon.</p>}
+        {flowers.length > 0 ? flowers.map(flower => <Card key={flower._id} flower={flower} makeFlowerId={makeFlowerId}  /> ) : <p>No flowers yet. We'll be growing some soon.</p>}
         </div>
         </div>
         </>
