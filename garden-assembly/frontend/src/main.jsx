@@ -10,8 +10,6 @@ import IntroButton from './assets/images/IntroButton.gif'
 import ButtonClick from './assets/audio/buttonclick.mp3'
 let slide = 1
 const click = new Audio(ButtonClick)
-let introScreen =  document.getElementById("intro-root");
-let introbtn = document.getElementById('intro-button');
 
 
 
