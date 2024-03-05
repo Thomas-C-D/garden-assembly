@@ -21,6 +21,13 @@ app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 
+app.use(express.static(path.join(path.dirname(__dirname), 'frontend', 'dist')))
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(path.dirname(__dirname), 'frontend', 'dist', 'index.html'));
+});
+
+
 // Mount routes
 
 app.use('/api/comments', commentsCtrl)
