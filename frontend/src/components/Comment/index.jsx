@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { updateComment, deleteComment } from '../../../utils/backend'
+import './styles.css'
+
 
 export default function Comment({ data, refreshComments }) {
     console.log(data)
@@ -34,14 +36,16 @@ let buttons = <div></div>
 if (localStorage.userId == data.userId) {
     buttons =              
     <>  
-     <div>
+     <div id="commenting-buttons">
     <button
         onClick={() => { setShowEditForm(true)}}
+        className="detail-button"
     >
         Edit
     </button>
     <button
         onClick={handleDelete}
+        className="detail-button"
     >
         Delete
     </button>
@@ -53,34 +57,39 @@ if (localStorage.userId == data.userId) {
     if (showEditForm) {
         return (
             <>
+            <div id="single-comment">
             <form 
             onSubmit={handleSubmit}
-            
+            id="commenting-form"
             >
             <textarea 
                 name="content"
                 placeholder="Add comment"
                 value={editFormData.content}
                 onChange={handleInputChange}
+                id="onecomment-text"
             ></textarea>
             <button
                 onClick={() => { setShowEditForm(false) }}
+                className="detail-button"
             >
                 Close
             </button>
             <button
                 type="submit"
+                className="detail-button"
             >
                 Post
             </button>
             </form>
+            </div>
             </>
         )
     } else {
         return (
-            <div>
-                <p>{data.name}</p>
-                <p>{data.content}</p>
+            <div id="single-comment">
+                <p id="comment-name">{data.name}</p>
+                <p id="comment-content">{data.content}</p>
                 {buttons}
             </div>
         )

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { signUp, logIn } from '../../../utils/backend'
-
+import "./styles.css"
 
 export default function AuthFormPage({ setLoginStatus }) {
 
@@ -41,19 +41,20 @@ export default function AuthFormPage({ setLoginStatus }) {
         navigate('/')
     }
     return (
-        <div>
+        <div id="user-form">
             <div>
                 <h2>{actionText}</h2>
                 <form  onSubmit={handleSubmit}>
                    { hasName && 
                     <div>
-                        <label htmlFor="name">Name</label>
+                        <label htmlFor="name"  >Name</label>
                         <input 
                             id="name"
                             name="name"
                             type="name"
                             required
                             placeholder="Name"
+                            className="user-input"
                             value={formData.name}
                             onChange={handleInputChange}
                         />
@@ -68,6 +69,7 @@ export default function AuthFormPage({ setLoginStatus }) {
                             type="email"
                             required
                             placeholder="Email address"
+                            className="user-input"
                             value={formData.email}
                             onChange={handleInputChange}
                         />
@@ -81,6 +83,7 @@ export default function AuthFormPage({ setLoginStatus }) {
                             minLength='6'
                             required
                             placeholder="Password"    
+                            className="user-input"
                             value={formData.password}
                             onChange={handleInputChange}
                         />

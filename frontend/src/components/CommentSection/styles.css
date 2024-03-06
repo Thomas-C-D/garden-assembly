@@ -1,0 +1,59 @@
+#section-block {
+    
+    width: 100%;
+    height: 80%;
+}
+
+#comment-top {
+
+display: flex;
+
+}
+#comment-top * {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 2px;
+    
+}
+
+#comments-inside {
+    border: 1px solid white;
+    width: 100%;
+    height: 70%;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+#comments-inside::-webkit-scrollbar {
+    
+    height: 20%;
+        
+}
+
+#comments-inside::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#comments-inside::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: .5px solid white;
+    border-radius: 20px;
+}
+
+#comments-inside::-webkit-scrollbar-thumb:hover {
+    background: #203C54FF;
+}
+
+
+
+#comments-inside::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+
+#make-comment {
+    width: 80%;
+}
+
+

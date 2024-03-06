@@ -32,6 +32,7 @@ if (loginStatus) {
       localStorage.clear()
       setLoginStatus(false)
     }}
+    id="logout-button"
 >
     Log out
   </button>
@@ -64,7 +65,7 @@ if (loginStatus) {
     } />
     <Route path="/details"
       element={
-        <DetailsPage myFlowerId={flowerId}/>
+        <DetailsPage myFlowerId={flowerId} loginStatus={loginStatus} />
       }
     />
     <Route  path="/auth/:formType" 

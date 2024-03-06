@@ -1,0 +1,75 @@
+#flower-block {
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    
+    align-items: center;
+}
+
+#nameandcontent {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Vavont";
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#content-area {
+    padding: 20px;
+    width: 70%;
+    height: 70%;
+   
+    align-self: center;
+    overflow: scroll;
+}
+
+#content-area::-webkit-scrollbar {
+    width: 100%;
+    height: 100%;
+}
+
+#spriteblock {
+    
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#flower-buttons {
+    align-self: flex-end;
+    
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#flower-update {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+#input-flower {
+    width: 50%;
+    height: 60%;
+    align-self: center;
+}
+
+#update-buttons {
+ 
+    height: 20%;
+    align-self: flex-end;
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+    align-items: center;
+}

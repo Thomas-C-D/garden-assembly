@@ -23,11 +23,9 @@ setTimeout(() => {
 function introSlide() {
   click.play()
   if (slide == 1) {
-    console.log("should work");
     document.getElementById('intro-root').style.backgroundImage = `url('${IntroCard2}')`
   }
   if (slide == 2) {
-    console.log("should work again");
     document.getElementById('intro-root').style.backgroundImage = `url('${IntroCard3}')`
   }
   if (slide == 3) {
@@ -39,6 +37,8 @@ function introSlide() {
 
   slide++;
 }
+
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

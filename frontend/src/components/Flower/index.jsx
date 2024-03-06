@@ -2,6 +2,8 @@ import {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { updateFlower, deleteFlower, getOneFlower } from '../../../utils/backend'
 import FlowerSprite from '../FlowerSprite'
+import './styles.css'
+
 
 export default function Flower({ flowerId }) {
     const [flower, setFlower] = useState({})
@@ -47,14 +49,16 @@ export default function Flower({ flowerId }) {
     let buttons = <><div></div></>
     if (localStorage.userId == flower.userId) {
         buttons = <>
-                        <div>
+                        <div id="flower-buttons">
                     <button
                         onClick={() => { setShowEditForm(true)}}
+                        className="detail-button"
                     >
                         Edit
                     </button>
                     <button
                         onClick={handleDelete}
+                        className="detail-button"
                     >
                         Delete
                     </button>
@@ -68,34 +72,41 @@ export default function Flower({ flowerId }) {
             <>
             <form 
             onSubmit={handleSubmit}
-            
+            id="flower-update"
             >
             <textarea 
                 name="content"
                 placeholder="Make updates to your post-grad journal here."
                 value={editFormData.content}
                 onChange={handleInputChange}
+                id="input-flower"
             ></textarea>
+            <div id="update-buttons">
             <button
                 onClick={() => { setShowEditForm(false) }}
+                className="detail-button"
             >
                 Close
             </button>
             <button
                 type="submit"
+                className="detail-button"
             >
                 Post
             </button>
+            </div>
             </form>
             </>
         )
     } else {
         return (
-            <div>
-               <FlowerSprite flower={flower}/>
-               <p>{flower.name}</p>
-               <p>{flower.content}</p>
+            <div id="flower-block">
+               <div id="spriteblock"><FlowerSprite flower={flower}/></div>
+                <div id="nameandcontent">
+               <h2 id="flower-name">{flower.name}</h2>
+               <div id="content-area"><p>{flower.content}</p></div>
             {buttons}
+            </div>
             </div>
         )
     }

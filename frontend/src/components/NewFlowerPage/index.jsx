@@ -2,6 +2,9 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { postFlower } from '../..//../utils/backend'
 
+import './styles.css'
+
+
 export default function NewFlowerPage() {
 
     const [formData, setFormData] = useState({
@@ -25,13 +28,16 @@ export default function NewFlowerPage() {
 
     return (
         <>
+        <div id="flower-form">
+            
         <form 
         onSubmit={handleSubmit}
         >
             <textarea name="content" 
-                placeholder='Leave your hopes for the future here. Update to document your journey towards them.'
+                placeholder='Leave your hopes for the future here. Update to document your journey towards them.                 Ex: 3/6/2024: My dream is to....    '
                 value={formData.content}
                 onChange={handleInputChange}
+                id="flower-input"
             ></textarea>
             <button
             type='submit'
@@ -39,7 +45,7 @@ export default function NewFlowerPage() {
                 Plant flower
             </button>
         </form>
-        
+        </div>
         </>
     )
 }

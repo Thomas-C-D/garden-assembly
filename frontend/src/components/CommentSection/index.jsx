@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { postComment, getComments } from '../../../utils/backend'
 import Comment from "../Comment"
+import './styles.css'
 
-export default function CommentSection({ flowerId }) {
+export default function CommentSection({ flowerId, loginStatus }) {
      const [comments, setComments]  = useState([])
      const [showCreateForm, setShowCreateForm] = useState(false)
      const [createFormData, setCreateFormData] = useState({
@@ -56,14 +57,26 @@ export default function CommentSection({ flowerId }) {
         btnText = 'Close'
      }
 
-     return  (
-        <div>
-            <h2>Comments</h2>
-            <button
+     let commentButton = <><p></p></>
+
+     if (loginStatus) {
+        commentButton = <>
+                    <button
                 onClick={toggleCreateForm}
+                className="detail-button"
             >
                 {btnText}
             </button>
+
+        </>
+     }
+     return  (
+        <div id="section-block">
+            <div id="comment-top">
+            <h2>Comments</h2>
+            
+            {commentButton}            
+            
             {
                 showCreateForm && <form
                     onSubmit={handleSubmit}
@@ -72,15 +85,22 @@ export default function CommentSection({ flowerId }) {
                 placeholder="Add a comment"
                     value={createFormData.content}
                     onChange={handleInputChange}
+                    id="make-comment"
                 ></textarea>
                 <button
                 type="submit"
+                className="detail-button"
                 >
                     Post
                 </button>
                 </form>
             }
+            </div>
+            <div id="comments-inside">
+                <div>
             {commentElements}
+            </div>
+            </div>
         </div>
      )
 }
