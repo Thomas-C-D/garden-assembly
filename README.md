@@ -54,9 +54,13 @@ or:
 * As a friend / relative of the app's creator, I want to see what they have made and support them.
 
 # Unsolved Problems and Major Hurdles
+
 **Time Constraints**
+
 Once again, my issues with time management made it difficult to get everything that I wanted to add to my app done in time, which was particularly not helped by how unfamiliar I was with React. Nevertheless, I did my best to use my time wisely and did crunch time where I had to, and Garden-Assembly has still come out beautifully.
+
 **Unfamiliarity with React**
+
 Despite, or perhaps in part because of, its compressed frontend, React is much more labrynthinine than I was anticipating, and its unfamiliar rules and setting contributed to my difficulty in meeting all my stretch goals - such as making it difficult to apply audio-playing event listeners to buttons on the app. I do, however, feel I have grown to know React very well now, and will hopefully be able to navigate it with much more ease in the future.
 # What's Next
 I hope to add my own personally composed background music to the app, along with more sound effects and possibly better animations.
