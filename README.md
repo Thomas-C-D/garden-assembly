@@ -42,7 +42,7 @@ comment.js |
 * VS Code
 
   # Installation Instructions
-Access Bottles by either:
+Access Garden-Assembly by either:
 - Opening it via Heroku through [this link](https://garden-assembly-2e054255c800.herokuapp.com/)
   
 or:
