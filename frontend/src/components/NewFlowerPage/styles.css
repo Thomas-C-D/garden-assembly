@@ -8,9 +8,326 @@
 
 }
 
+
 #flower-input {
     width: 400px;
     height: 200px;
     margin-right: 10px;
     margin-left: 30px;
 }
+
+@media (width: 375px) and (height: 667px) {
+    #flower-form {
+        scale: 70%;
+    }
+    
+    #flower-input {
+        position: relative;
+        right: 10px;
+        bottom: 20px;
+        height: 400px;
+        font-size: 20px;
+    }
+
+    #flower-form button {
+        position: relative;
+        left: 20px;
+    }
+    
+}
+
+@media  (width: 414px) and (height: 896px) {
+    #flower-form {
+        scale: 80%;
+    }
+    
+    #flower-input {
+        position: relative;
+        right: 10px;
+        bottom: 20px;
+        height: 500px;
+        font-size: 20px;
+    }
+
+    #flower-form button {
+        position: relative;
+        left: 40px;
+        scale: 120%;
+    }
+    
+}
+
+@media  (width: 390px) and (height: 844px) {
+    #flower-form {
+        scale: 70%;
+    }
+    
+    #flower-input {
+        position: relative;
+        right: 10px;
+        bottom: 20px;
+        height: 400px;
+        font-size: 20px;
+    }
+
+    #flower-form button {
+        position: relative;
+        left: 40px;
+        scale: 150%;
+    }
+    
+}
+
+@media  (width: 430px) and (height: 932px) {
+    #flower-form {
+        scale: 80%;
+    }
+    
+    #flower-input {
+        position: relative;
+        right: 10px;
+        bottom: 20px;
+        height: 400px;
+        font-size: 30px;
+    }
+
+    #flower-form button {
+        position: relative;
+        left: 40px;
+        scale: 150%;
+    }
+    
+}
+
+
+@media  (width: 412px) and (height: 915px) {
+    #flower-form {
+        scale: 75%;
+    }
+    
+    #flower-input {
+        position: relative;
+        right: 10px;
+        bottom: 20px;
+        height: 400px;
+        font-size: 25px;
+    }
+
+    #flower-form button {
+        position: relative;
+        left: 40px;
+        scale: 150%;
+    }
+    
+}
+
+@media  (width: 360px) and (height: 740px) {
+    #flower-form {
+        scale: 70%;
+    }
+    
+    #flower-input {
+        position: relative;
+        right: 10px;
+        bottom: 20px;
+        height: 400px;
+        font-size: 20px;
+    }
+
+    #flower-form button {
+        position: relative;
+        left: 40px;
+        scale: 140%;
+    }
+    
+}
+
+@media  (width: 768px) and (height: 1024px), (width: 820px) and (height: 1180px) {
+    #flower-form {
+        scale: 100%;
+    }
+    
+    #flower-input {
+        position: relative;
+        right: 10px;
+        bottom: 20px;
+        height: 400px;
+        width: 550px !important;
+        font-size: 20px;
+    }
+
+    #flower-form button {
+        position: relative;
+        left: 40px;
+        scale: 140%;
+    }
+    
+}
+
+@media  (width: 1024px) and (height: 1366px) {
+    #flower-form {
+        scale: 120%;
+    }
+    
+    #flower-input {
+        position: relative;
+        left: 20px;
+        bottom: 20px;
+        height: 400px;
+        width: 600px !important;
+        font-size: 20px;
+    }
+
+    #flower-form button {
+        position: relative;
+        right: 80px;
+        top: 40px;
+        scale: 140%;
+    }
+    
+}
+
+@media  (width: 912px) and (height: 1368px) {
+    #flower-form {
+        scale: 110%;
+    }
+    
+    #flower-input {
+        position: relative;
+        left: 20px;
+        bottom: 20px;
+        height: 400px;
+        width: 600px !important;
+        font-size: 20px;
+    }
+
+    #flower-form button {
+        position: relative;
+        left: 80px;
+        top: 40px;
+        scale: 140%;
+    }
+    
+}
+
+@media  (width: 540px) and (height: 720px) {
+    
+    
+    
+    
+    #flower-input {
+        position: relative;
+        left: -10px;
+        bottom: 20px;
+       
+        width: 400px !important;
+        font-size: 20px;
+    }
+
+    #flower-form button {
+        position: relative;
+        left: 40px;
+        top: 20px;
+        scale: 140%;
+    }
+    
+}
+
+@media  (width: 344px) and (height: 882px) {
+    
+    
+    #flower-form {
+        scale: 60%;
+    }
+    
+    #flower-input {
+        position: relative;
+        left: -10px;
+        bottom: 20px;
+        height: 500px;
+        width: 400px !important;
+        font-size: 30px;
+    }
+
+    #flower-form button {
+        position: relative;
+        left: 40px;
+        top: 20px;
+        scale: 170%;
+    }
+    
+}
+
+@media  (width: 853px) and (height: 1280px) {
+    #flower-form {
+        scale: 100%;
+    }
+    
+    #flower-input {
+        position: relative;
+        left: 20px;
+        bottom: 20px;
+        height: 400px;
+        width: 600px !important;
+        font-size: 20px;
+    }
+
+    #flower-form button {
+        position: relative;
+        left: 80px;
+        top: 40px;
+        scale: 170%;
+    }
+    
+}
+
+@media  (width: 412px) and (height: 914px) {
+    
+    
+    #flower-form {
+        scale: 70%;
+    }
+    
+    #flower-input {
+        position: relative;
+        left: -10px;
+        bottom: 20px;
+        height: 500px;
+        width: 400px !important;
+        font-size: 30px;
+    }
+
+    #flower-form button {
+        position: relative;
+        left: 40px;
+        top: 20px;
+        scale: 170%;
+    }
+    
+}
+
+@media  (width: 1024px) and (height: 600px), (width: 1280px) and (height: 800px) {
+    
+    
+    #flower-form {
+        scale: 70%;
+    }
+    
+    #flower-input {
+        position: relative;
+        left: -10px;
+        bottom: 20px;
+        height: 400px;
+        width: 700px !important;
+        font-size: 40px;
+    }
+
+    #flower-form button {
+        position: relative;
+        left: 40px;
+        top: 20px;
+        scale: 170%;
+    }
+    
+}
+

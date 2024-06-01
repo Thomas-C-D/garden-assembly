@@ -41,3 +41,114 @@
     width: 80%;
     height: 50%;
 }
+
+@media (width: 375px) and (height: 667px), (width: 390px) and (height: 844px), (width: 540px) and (height: 720px), (width: 344px) and (height: 882px), (width: 412px) and (height: 914px) {
+    #single-comment {
+        scale: 80%;
+    }
+    #commenting-buttons {
+        position: relative;
+        scale: 80%;
+        left: 30px;
+    }
+}
+
+@media  (width: 414px) and (height: 896px) {
+    #single-comment {
+        scale: 95%;
+    }
+    #commenting-buttons {
+        position: relative;
+        scale: 80%;
+        left: 10px;
+    }
+}
+
+@media  (width: 390px) and (height: 844px) {
+    #single-comment {
+        scale: 100%;
+    }
+    #commenting-buttons {
+        position: relative;
+        scale: 70%;
+        left: 20px;
+    }
+}
+
+@media  (width: 430px) and (height: 932px) {
+    #single-comment {
+        scale: 100%;
+    }
+    #commenting-buttons {
+        position: relative;
+        scale: 75%;
+        left: 10px;
+    }
+}
+
+
+@media  (width: 412px) and (height: 915px) {
+    #single-comment {
+        scale: 100%;
+    }
+    #commenting-buttons {
+        position: relative;
+        scale: 75%;
+        left: 10px;
+    }
+}
+
+@media  (width: 360px) and (height: 740px) {
+    #single-comment {
+        scale: 90%;
+    }
+    #commenting-buttons {
+        position: relative;
+        scale: 75%;
+        left: 30px;
+    }
+}
+
+@media  (width: 768px) and (height: 1024px), (width: 820px) and (height: 1180px), (width: 1024px) and (height: 1366px), (width: 912px) and (height: 1368px) {
+    #single-comment {
+        scale: 100%;
+    }
+    #commenting-buttons {
+        position: relative;
+        scale: 100%;
+        left: -10px;
+    }
+}
+
+@media  (width: 853px) and (height: 1280px) {
+    #single-comment {
+        scale: 100%;
+    }
+    #commenting-buttons {
+        position: relative;
+        scale: 120%;
+        left: -30px;
+    }
+}
+
+@media  (width: 1024px) and (height: 600px) {
+    #single-comment {
+        scale: 100%;
+    }
+    #commenting-buttons {
+        position: relative;
+        scale: 120%;
+        left: -30px;
+    }
+}
+
+@media  (width: 1280px) and (height: 800px) {
+    #single-comment {
+        scale: 100%;
+    }
+    #commenting-buttons {
+        position: relative;
+        scale: 120%;
+        left: -30px;
+    }
+}

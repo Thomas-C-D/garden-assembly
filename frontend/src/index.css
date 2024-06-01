@@ -138,14 +138,20 @@ nav {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  
 }
 
+nav * {
+  font-weight: bold;
+}
 #link-list {
   justify-self: right;
   display: flex;
   justify-content: space-between;
   width: 50%;
 }
+
+
 
 input {
   background: transparent;
@@ -176,7 +182,7 @@ label {
   border-color: black;
   color: black;
  }
-
+ 
  #intro-button  {
   width: 50px;
   min-width: 45px;
@@ -195,14 +201,15 @@ label {
 
 #logout-button {
   color: lightgreen;
-text-decoration: none;
-font-family: "Vavont";
+  text-decoration: none;
+  font-family: "Vavont";
 font-size: 20px;
 border: none;
 font-weight: normal;
 height: inherit;
 width: inherit;
 min-width: inherit;
+font-weight: bold;
 }
 
 #logout-button:hover {
@@ -211,10 +218,10 @@ min-width: inherit;
 
 } 
 
- h2 {
+h2 {
   font-family: "Levorotary";
   font-size: 30px;
- }
+}
 
 
 textarea {
@@ -229,4 +236,119 @@ textarea::placeholder {
 }
 
 
+/* @media (max-width: 430px) { */
+  /* #link-list { */
+     /* width: 100%; */
+  /* } */
+/*  */
+  /* nav { */
+    /* scale: 90%; */
+  /* } */
+/*  */
+  /* #logout-button { */
+    /* margin-bottom: 20px; */
+  /* } */
+/* } */
 
+@media (width: 1280px) and (height: 800px) {
+  nav {
+    scale: 125% !important;
+  }
+}
+
+@media (width: 1024px) and (height: 1366px) {
+  nav {
+    scale: 120% !important;
+  }
+}
+
+@media (width: 1024px) and (height: 600px) {
+  nav {
+    scale: 120% !important;
+  }
+}
+
+@media (max-width: 801px) {
+  nav {
+    scale: 100% !important;
+  }
+  #logout-button {
+      margin-bottom: 30px !important;
+      margin-right: 30px !important;
+  }
+}
+
+@media (width: 768px) and (height: 1024px) {
+
+  nav {
+    scale: 120%;
+  }
+  
+  #logout-button {
+    margin-bottom: 30px;
+    margin-right: 30px;
+  }
+}
+
+@media (width: 412px) and (height: 914px) {
+
+  nav {
+    scale: 90% !important;
+  }
+}
+
+@media (width: 375px) and (height: 667px) {
+  nav {
+    scale: 80% !important;
+
+  }
+  #link-list {
+    width: 100% !important;
+  }
+  #logout-button {
+    margin-bottom: 60px !important;
+  }
+}
+
+
+@media (width: 280px) and (height: 653px) {
+  #link-list {
+   width: 50% !important;
+   
+  }
+  nav * {
+   margin-right: 10px !important;
+  }
+   nav {
+    scale: 75% !important;
+    width: 60% !important;
+    
+    
+   }
+
+}
+
+@media (width: 360px) and (height: 740px) {
+  nav {
+    scale: 90% !important;
+  }
+  #link-list {
+    width: 100% !important;
+  }
+}
+
+@media (width: 344px) and (height: 882px) {
+  nav {
+    scale: 85% !important;
+  }
+  #link-list {
+    width: 100% !important;
+  }
+}
+
+@media (width: 414px) and (height: 896px), (width: 390px) and (height: 844px), (width: 430px) and (height: 932px), (width: 412px) and (height: 915px), (width: 344px) and (height: 882px), (width: 412px) and (height: 914px) {
+  nav * {
+    margin: 2px;
+    font-size: 18px;
+  }
+}
